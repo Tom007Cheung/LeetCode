@@ -53,10 +53,11 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        s = cmp(x, 0)
+        s = self.cmp(x, 0)
         r = int(repr(s * x)[::-1])
         return s * r * (r < 2 ** 31)
-
+    def cmp(self, a, b):
+        return (a > b) - (a < b)
 
 if __name__ == "__main__":
     print(Solution().reverse(123))
